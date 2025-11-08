@@ -1,0 +1,11 @@
+@font-face {
+    font-family: 'Kyobo Handwriting 2021 sjy';
+    src: url('KyoboHandwriting2021sjy.eot');
+    src: url('KyoboHandwriting2021sjy.eot?#iefix') format('embedded-opentype'),
+        url('KyoboHandwriting2021sjy.woff2') format('woff2'),
+        url('KyoboHandwriting2021sjy.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+

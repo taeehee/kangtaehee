@@ -1,0 +1,36 @@
+@charset "UTF-8";
+@import url(main.css);
+@import url(main.scss);
+/* root 설정 */
+:root {
+  --fontSize-64: 6.4rem; /* TO YOU , contact me!*/
+  --fontSize-48: 4.8rem; /* 손글씨_국문 */
+  --fontSize-40: 4rem; /* Scroll to open, 손글씨 국문 */
+  --fontSize-35: 3.5rem; /* project제목 */
+  --fontSize-28: 2.8rem; /* 로고 */
+  --fontSize-25: 2.5rem; /* auout_l */
+  --fontSize-20: 2rem; /* about_m, 반응형/적응형버튼, project본문*/
+  --fontSize-18: 1.8rem; /* about_s, footer */
+  --fontSize-16: 1.6rem; /* 네비, project버튼 */
+}
+
+/* 공통스타일 정리 */
+/* 그리드 간격 28px*2=56px */
+.header .inner,
+.container,
+.section01 .inner,
+.about .letter_bg .inner,
+.project .inner,
+.design .inner {
+  max-width: 1520px;
+  width: calc(100% - 56px);
+  margin: 0 auto;
+}
+
+button {
+  font-family: "Times New Roman";
+  font-weight: 400;
+  line-height: 140%;
+  border: 0.1rem solid rgba(0, 0, 0, 0.2);
+  background-color: rgba(255, 255, 255, 0.3);
+}/*# sourceMappingURL=common.css.map */

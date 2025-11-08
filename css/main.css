@@ -1,0 +1,309 @@
+@charset "UTF-8";
+@import url("reset.css");
+@import url(common.css);
+/* 웹폰트 */
+@import url(../font/Montserrat/stylesheet.css);
+@import url(../font/손글씨_국문_교보2021/stylesheet.css);
+@import url(../font/손글씨_영문Reenie_Beanie/stylesheet.css);
+
+html,
+body {
+  font-size: 62.5%;
+  /* rem 기준 10px설정*/
+  font-family: "Montserrat";
+  line-height: 1.4;
+  /* 140%; */
+}
+
+body {
+  position: relative;
+  /* 헤더고정 */
+  margin: 0;
+}
+
+body #wrap {
+  font-size: var(--fontSize-20);
+}
+
+.header {
+  width: 100%;
+  height: 10rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  /* 헤더고정 */
+  z-index: 999999;
+
+}
+
+.header .inner {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+.header .inner .logo a {
+  height: 100%;
+  display: block;
+  font-size: var(--fontSize-28);
+  font-weight: 300;
+}
+
+.header .inner .nav {
+  display: flex;
+  font-size: var(--fontSize-16);
+  font-weight: 400;
+  gap: 1rem;
+  /* li */
+}
+
+.header .inner .nav li a {
+  display: block;
+  height: 100%;
+  padding: 2rem;
+}
+
+.main_section {
+  width: 100%;
+
+  /* letter_section */
+}
+
+.main_section .letter_section {
+  height: 70%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* position: fixed; <-- 이 코드를 제거합니다! */
+
+}
+
+.main_section .letter_section .title {
+  width: 100%;
+}
+
+.main_section .letter_section .title p {
+  font-family: "Reenie Beanie";
+  font-size: var(--fontSize-64);
+  text-align: center;
+  /* 왼쪽으로 7도 기울이기 */
+  transform: rotate(-7deg);
+  transition: transform 0.5s ease;
+  /* 모션과 함께 적용되도록 transition 추가 (선택사항) */
+}
+
+.main_section .letter_section .envelope_section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+}
+
+.main_section .letter_section .envelope_section .envelope-wrap {
+  position: relative;
+  width: 40rem;
+  height: 40rem;
+  /* 초기 상태 */
+}
+
+.main_section .letter_section .envelope_section .envelope-wrap img {
+  position: absolute;
+  left: 0;
+  width: 100%;
+
+  object-fit: cover;
+  /* 왼쪽으로 7도 기울이기 */
+  transform: rotate(-7deg);
+  transition: transform 0.5s ease;
+  /* 모션과 함께 적용되도록 transition 추가 (선택사항) */
+}
+
+.main_section .letter_section .envelope_section .envelope-wrap img:nth-child(4) {
+  width: 90%;
+  position: absolute;
+  left: 20px;
+  /* transform: translate(-50%,-50%); */
+  /* 왼쪽으로 7도 기울이기 */
+  transform: rotate(-7deg);
+  transition: transform 0.5s ease;
+  /* 모션과 함께 적용되도록 */
+}
+
+.main_section .letter_section .envelope_section .envelope-wrap .envelope-closed {
+  opacity: 1;
+  z-index: 4;
+}
+
+.main_section .letter_section .envelope_section .envelope-wrap .envelope-body {
+  opacity: 1;
+  z-index: 2;
+}
+
+.main_section .letter_section .envelope_section .envelope-wrap .envelope-flap {
+  transform-origin: top center;
+  /* 뚜껑이 위로 열림 */
+  z-index: 3;
+}
+
+.main_section .letter_section .envelope_section .envelope-wrap .letter {
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* transform: translateY(120px); */
+  z-index: 1;
+}
+
+.main_section .letter_section .text {
+  width: 100%;
+  height: 9rem;
+  position: relative;
+  /* 화살표absolute 기준 */
+  position: absolute;
+  /* .text absolute */
+  bottom: -6rem;
+}
+
+.main_section .letter_section .text p {
+  position: absolute;
+  bottom: 0;
+  left: 56%;
+  /* 화살표와 text사이거리 조절 */
+  font-family: "Reenie Beanie";
+  font-size: var(--fontSize-40);
+}
+
+.main_section .letter_section .text::before {
+  content: "";
+  width: 13.64%;
+  height: 100%;
+  background: url("../img/화살표.png") center center/100% no-repeat;
+  position: absolute;
+  top: 0;
+  left: 40%;
+}
+
+/* 편지end*/
+
+
+/* reveal text효과 */
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+section {
+  /*   display: flex;
+  align-items: center;
+  justify-content: center; */
+  min-height: 100vh;
+}
+
+.container {
+  /* position: relative; */
+
+}
+
+.reveal {
+  font-family: 'Kyobo Handwriting 2021 sjy';
+  font-kerning: none;
+  text-transform: uppercase;
+  font-size: var(--fontSize-48);
+  line-height: 1.4;
+  margin-top: 20rem;
+}
+
+/* reveal text 효과 end */
+
+/* 날아가는 새 */
+#robin {
+  width: 8em;
+}
+
+/* 날아가는 새 end */
+
+.about {
+  width: 100%;
+}
+
+.about .letter_bg {
+  background-image: url("../img/letter질감2.png") center center/100% no-repeat;
+}
+
+.about .letter_bg .inner {
+  width: 100%; /* 컨테이너w */
+  display: flex;
+}
+
+.about .letter_bg .inner .profile_left {
+  width: 25.65%;
+}
+
+.about .letter_bg .inner .profile_left .image {
+  width: 100%;
+  height: 42.4rem;
+}
+
+.about .letter_bg .inner .profile_left .image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: rotate(7deg);
+}
+
+.about .letter_bg .inner .profile_left .info_section {
+  width: 100%;
+  padding: 0 0 0 3rem;
+}
+
+.about .letter_bg .inner .profile_left .info_section .info_wrap {
+  width: 100%;
+
+
+
+}
+
+.about .letter_bg .inner .profile_left .info_section .info_wrap .info {}
+
+.about .letter_bg .inner .profile_left .info_section .info_wrap .info li {}
+
+.about .letter_bg .inner .profile_left .info_section .profile_right {}
+
+.about .letter_bg .inner .profile_left .info_section .profile_right .title {}
+
+.about .letter_bg .inner .profile_left .info_section .profile_right .title .text_wrap {}
+
+.about .letter_bg .inner .profile_left .info_section .profile_right .title .text_wrap .left_text {}
+
+.about .letter_bg .inner .profile_left .info_section .profile_right .title .text_wrap .left_text li {}
+
+.about .letter_bg .inner .profile_left .info_section .profile_right .title .text_wrap .right_text {}
+
+.about .letter_bg .inner .profile_left .info_section .profile_right .title .text_wrap .right_text li {}
+.about .letter_bg .inner .profile_left .info_section .profile_right .title .skill {
+  width: 100%;
+  display: flex;
+  gap: 2rem;
+}
+.about .letter_bg .inner .profile_left .info_section .profile_right .title .skill img {
+  width: 4.7rem;
+  height: 4.7rem;
+
+
+}

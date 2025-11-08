@@ -6,7 +6,7 @@ $(function () {
   let tl = gsap.timeline({
     scrollTrigger: {
       trigger: ".letter_section",
-      start: "top 41%",
+      start: "top top",
       end: "bottom 0%",
       scrub: true,
       pin: true,

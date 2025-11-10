@@ -7,6 +7,7 @@
   <title>강태희</title>
   <!-- <link rel="stylesheet" href="css/main.scss"> -->
   <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" /><!-- swiper -->
 
   <script src="lib/jquery-3.7.1.min.js"></script> <!-- 제이쿼리 -->
 
@@ -17,7 +18,69 @@
   <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.23/bundled/lenis.min.js"></script><!-- lenis -->
   <script src="https://unpkg.com/split-type"></script><!-- split-type -->
   <!-- main.js는 jQuery와 GSAP 다음에 로드합니다. (defer 제거) -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script><!-- swiper -->
   <script src="js/main.js"></script> <!-- js파일 -->
+
+  <script>
+    window.onload = () => {
+      let tabMenu = document.querySelectorAll('.tab_menu li');
+      let tabCont = document.querySelectorAll('.list');
+
+      //li를 클릭했을 때 실행
+      //list에게 클래스명 acive를 추가
+      //첫번째 li에게 클릭하면 첫번째 list에게 active추가
+      //두번째 li에게 클릭하면 두번째 list에게 active추가
+
+      //for(초기식; 조건식; 증감식) {실행코드}
+      for (let i = 0; i < tabMenu.length; i++) {
+        tabMenu[i].addEventListener('click', () => {
+
+          //모든 li에게 .active 삭제
+          //클릭한 li에게 .active 추가
+          tabMenu.forEach(tabMenuIndex => {
+            tabMenuIndex.classList.remove('active')
+          });
+
+          tabMenu[i].classList.add('active');
+
+          // 작성순서: class명 1.제거(remove)-> 2.추가(active)
+          // tabCont[0].classList.remove('active')
+          // tabCont[1].classList.remove('active')
+          // forEach() : 반복적으로 구성된 배열을 실행
+
+          //tabContIndex = [tabCont[0], tabCont[1]]이라는 뜻
+          tabCont.forEach(tabContIndex => {
+            tabContIndex.classList.remove('active');
+          });
+
+          //list에게 클래스명 active를 추가
+          tabCont[i + 1].classList.add('active');
+        });
+      }
+      //project 탭메뉴end
+
+
+      var swiper = new Swiper(".mySwiper", {
+        slidesPerView: 3,
+        spaceBetween: 30,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        autoplay: {
+          delay: 2500,
+          disableOnInteraction: false,
+        },
+      });
+      //design 스와이퍼슬라이드 end
+
+
+    };//script end
+  </script>
 </head>
 
 
@@ -57,9 +120,9 @@
             <p>Scroll to open</p>
           </div><!-- text -->
         </div><!-- letter_section -->
-      </section><!-- main_section -->
 
-      <section class="main_section_02">
+
+        <section class="main_section_02">
 
         <div class="app">
           <section><!-- reveal text효과  -->
@@ -71,7 +134,6 @@
             </div><!-- container -->
           </section><!-- reveal text효과 -->
         </div><!-- app -->
-
 
         <svg id="robin" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 287.67 198.61">
           <defs>
@@ -104,6 +166,7 @@
             d="M268.46,127.43c-11.47,33-49,50.94-91.8,45.34-23.45-3.07-42.82-19.17-42.82-42.82a42.82,42.82,0,0,1,42.82-42.82c25.75,0,37.58,14.5,57,26.86C255.58,128,268.46,127.43,268.46,127.43Z" />
         </svg><!-- 날아가는 새 -->
       </section><!-- main_section_02 -->
+
 
       <section class="about">
         <div class="letter_bg">
@@ -197,9 +260,10 @@
 
       <section class="project">
         <div class="inner">
+          <h3>PROJECT</h3>
           <ul class="tab_menu">
-            <li acitve>반응형 디자인5</li>
-            <li>적응형 디자인2</li>
+            <li acitve>반응형 디자인</li>
+            <li>적응형 디자인</li>
           </ul><!-- tab menu -->
 
           <div class="list active">
@@ -236,8 +300,8 @@
                   </div><!-- site -->
                 </div><!-- site_wrap -->
               </div><!-- text_section -->
-            </div><!-- item -->
-            
+            </div><!-- item1 -->
+
             <div class="item">
               <div class="image"><img src="img/bird.jpg" alt="Shake Shack 웹사이트 리뉴얼"></div>
               <div class="text_section">
@@ -271,7 +335,7 @@
                   </div><!-- site -->
                 </div><!-- site_wrap -->
               </div><!-- text_section -->
-            </div><!-- item -->
+            </div><!-- item2 -->
 
             <div class="item">
               <div class="image"><img src="img/bird.jpg" alt="fwee 모바일 앱 리뉴얼"></div>
@@ -306,7 +370,7 @@
                   </div><!-- site -->
                 </div><!-- site_wrap -->
               </div><!-- text_section -->
-            </div><!-- item -->
+            </div><!-- item3 -->
 
             <div class="item">
               <div class="image"><img src="img/bird.jpg" alt="쏘카 웹사이트 모작"></div>
@@ -337,9 +401,9 @@
                   </div><!-- site -->
                 </div><!-- site_wrap -->
               </div><!-- text_section -->
-            </div><!-- item -->
+            </div><!-- item4 -->
 
-             <div class="item">
+            <div class="item">
               <div class="image"><img src="img/bird.jpg" alt="이노션에스 웹사이트 모작"></div>
               <div class="text_section">
                 <strong>[반응형] 이노션에스 웹사이트 모작</strong>
@@ -368,19 +432,143 @@
                   </div><!-- site -->
                 </div><!-- site_wrap -->
               </div><!-- text_section -->
-            </div><!-- item -->
+            </div><!-- item5 -->
+          </div><!-- list1 / 반응형 디자인 -->
 
 
-          </div><!-- list1 / 반응형 -->
+          <div class="list">
+            <div class="item">
+              <div class="image"><img src="img/bird.jpg" alt="Apple 웹사이트 리뉴얼"></div>
+              <div class="text_section">
+                <strong>Apple 웹사이트 리뉴얼</strong>
+                <div class="text_wrap">
+                  <div class="text">
+                    <p class="field">제작범위</p>
+                    <p>Main page</p>
+                  </div><!-- text -->
+                  <div class="text">
+                    <p class="field">사용언어</p>
+                    <p>html, css</p>
+                  </div><!-- text -->
+                  <div class="text">
+                    <p class="field">프로그램</p>
+                    <p>figma, VSCode</p>
+                  </div><!-- text -->
+                  <div class="text">
+                    <p class="field">참여도</p>
+                    <p>기획, 디자인, 퍼블리싱 100%</p>
+                  </div><!-- text -->
+                </div><!-- text_wrap -->
+                <div class="site_wrap">
+                  <img src="img/bird.jpg" alt="qr코드" class="qr">
+                  <div class="site">
+                    <ul class="pnf">
+                      <li><a href="#">PROCESS</a></li>
+                      <li><a href="#">FIGMA</a></li>
+                    </ul><!-- pnf -->
+                    <li class="web"><a href="#">WEBSITE</a></li>
+                  </div><!-- site -->
+                </div><!-- site_wrap -->
+              </div><!-- text_section -->
+            </div><!-- item6 -->
 
+            <div class="item">
+              <div class="image"><img src="img/bird.jpg" alt="머니트리 웹사이트 모작"></div>
+              <div class="text_section">
+                <strong>머니트리 웹사이트 모작</strong>
+                <div class="text_wrap">
+                  <div class="text">
+                    <p class="field">제작범위</p>
+                    <p>Main page</p>
+                  </div><!-- text -->
+                  <div class="text">
+                    <p class="field">프로그램</p>
+                    <p>figma</p>
+                  </div><!-- text -->
+                  <div class="text">
+                    <p class="field">참여도</p>
+                    <p>디자인 100%</p>
+                  </div><!-- text -->
+                </div><!-- text_wrap -->
+                <div class="site_wrap">
+                  <img src="img/bird.jpg" alt="qr코드" class="qr">
+                  <div class="site">
+                    <li class="web"><a href="#">FIGMA</a></li>
+                  </div><!-- site -->
+                </div><!-- site_wrap -->
+              </div><!-- text_section -->
+            </div><!-- item7 -->
+
+          </div><!-- list2 / 적응형 디자인-->
 
         </div><!-- inner -->
-
       </section><!-- project -->
 
+      <section class="design">
+        <!-- slide per view -->
+        <div class="swiper mySwiper">
+          <h3>DESIGN</h3>
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img src="img/bird.jpg" alt="포토샵1">
+            </div><!-- swiper-slide  -->
+
+            <div class="swiper-slide">
+              <img src="img/bird.jpg" alt="포토샵2">
+            </div><!-- swiper-slide  -->
+
+            <div class="swiper-slide">
+              <img src="img/bird.jpg" alt="포토샵3">
+            </div><!-- swiper-slide  -->
+
+            <div class="swiper-slide">
+              <img src="img/bird.jpg" alt="포토샵4">
+            </div><!-- swiper-slide  -->
+
+            <div class="swiper-slide">
+              <img src="img/bird.jpg" alt="포토샵5">
+            </div><!-- swiper-slide  -->
+          </div><!-- swiper-wrapper end -->
+
+          <div class="swiper-pagination"></div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+        </div><!-- swiper mySwiper end -->
+
+      </section><!-- design end -->
+
+
+      <section class="contact">
+        <div class="letter_section">
+          <div class="title">
+            <p>아직 제 편지를 읽고 계신가요? </br>
+              다음 편지는 만나서 직접 이야기 하고 싶어요
+            </p>
+          </div><!-- title -->
+
+          <div class="envelope_section">
+            <div class="envelope-wrap">
+              <img src="img/closed.png" class="envelope-closed"> <!-- 닫힌봉투 -->
+              <img src="img/body.png" class="envelope-body"> <!-- 몸체 -->
+              <img src="img/flap.png" class="envelope-flap"> <!-- 뚜껑 -->
+              <img src="img/letter.png" class="letter"> <!-- 편지지 -->
+            </div><!-- envelope-wrap -->
+          </div><!-- envelope_section -->
+
+          <div class="text">
+            <p>Scroll to open</p>
+          </div><!-- text -->
+        </div><!-- letter_section -->
+      </section><!-- contact -->
 
 
 
+      </section class="main_section">
+
+
+      
+
+      
 
 
     </main><!-- main -->

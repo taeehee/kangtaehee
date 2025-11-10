@@ -17,11 +17,11 @@
 /* 공통스타일 정리 */
 /* 그리드 간격 28px*2=56px */
 .header .inner,
-.container,
+.main_section_02 .container,
 .section01 .inner,
 .about .letter_bg .inner,
 .project .inner,
-.design .inner {
+.design .swiper.mySwiper {
   max-width: 1520px;
   width: calc(100% - 56px);
   margin: 0 auto;

@@ -25,6 +25,10 @@ body #wrap {
   font-size: var(--fontSize-20);
 }
 
+section {
+  margin-bottom: 20rem;
+}
+
 .header {
   width: 100%;
   height: 10rem;
@@ -33,6 +37,7 @@ body #wrap {
   left: 0;
   /* 헤더고정 */
   z-index: 999999;
+  background-color: #ffffff;
 }
 
 .header .inner {
@@ -68,26 +73,23 @@ body #wrap {
   width: 100%;
   height: 100vh;
   padding-top: 200px;
-  /* letter_section */
 }
 
-.main_section .letter_section {
+.main_section .letter_section,
+.contact .letter_section {
   height: 100% !important;
   width: 100%;
   top: 0;
   left: 0;
-
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   /* position: fixed; <-- 이 코드를 제거합니다! */
-
 }
 
-.pin-spacer {}
-
-.main_section .letter_section .title {
+.main_section .letter_section .title,
+.contact .letter_section .title {
   width: 100%;
 }
 
@@ -101,25 +103,32 @@ body #wrap {
   /* 모션과 함께 적용되도록 transition 추가 (선택사항) */
 }
 
-.main_section .letter_section .envelope_section {
+.contact .letter_section .title p {
+  font-family: 'Kyobo Handwriting 2021 sjy';
+  font-size: var(--fontSize-40);
+  text-align: center;
+
+}
+
+.main_section .letter_section .envelope_section,
+.contact .letter_section .envelope_section {
   width: 100%;
   display: flex;
   justify-content: center;
-
 }
 
-.main_section .letter_section .envelope_section .envelope-wrap {
+.main_section .letter_section .envelope_section .envelope-wrap,
+.contact .letter_section .envelope_section .envelope-wrap {
   position: relative;
   width: 40rem;
   height: 40rem;
-  /* 초기 상태 */
 }
 
-.main_section .letter_section .envelope_section .envelope-wrap img {
+.main_section .letter_section .envelope_section .envelope-wrap img,
+.contact .letter_section .envelope_section .envelope-wrap img {
   position: absolute;
   left: 0;
   width: 100%;
-
   object-fit: cover;
   /* 왼쪽으로 7도 기울이기 */
   /* transform: rotate(-7deg);
@@ -127,7 +136,8 @@ body #wrap {
   /* 모션과 함께 적용되도록 transition 추가 (선택사항) */
 }
 
-.main_section .letter_section .envelope_section .envelope-wrap img:nth-child(4) {
+.main_section .letter_section .envelope_section .envelope-wrap img:nth-child(4),
+.contact .letter_section .envelope_section .envelope-wrap img:nth-child(4) {
   width: 90%;
   position: absolute;
   left: 20px;
@@ -138,23 +148,28 @@ body #wrap {
   /* 모션과 함께 적용되도록 */
 }
 
-.main_section .letter_section .envelope_section .envelope-wrap .envelope-closed {
+  /* 초기 상태 */
+.main_section .letter_section .envelope_section .envelope-wrap .envelope-closed,
+.contact .letter_section .envelope_section .envelope-wrap .envelope-closed {
   opacity: 1;
   z-index: 4;
 }
 
-.main_section .letter_section .envelope_section .envelope-wrap .envelope-body {
+.main_section .letter_section .envelope_section .envelope-wrap .envelope-bod,
+.contact .letter_section .envelope_section .envelope-wrap .envelope-body {
   opacity: 1;
   z-index: 2;
 }
 
-.main_section .letter_section .envelope_section .envelope-wrap .envelope-flap {
+.main_section .letter_section .envelope_section .envelope-wrap .envelope-flap,
+.contact .letter_section .envelope_section .envelope-wrap .envelope-flap {
   transform-origin: top center;
   /* 뚜껑이 위로 열림 */
   z-index: 3;
 }
 
-.main_section .letter_section .envelope_section .envelope-wrap .letter {
+.main_section .letter_section .envelope_section .envelope-wrap .letter,
+.contact .letter_section .envelope_section .envelope-wrap .letter {
   position: absolute;
   top: 0;
   left: 0;
@@ -162,7 +177,8 @@ body #wrap {
   z-index: 1;
 }
 
-.main_section .letter_section .text {
+.main_section .letter_section .text,
+.contact .letter_section .text {
   width: 100%;
   height: 9rem;
   position: relative;
@@ -171,7 +187,8 @@ body #wrap {
 
 }
 
-.main_section .letter_section .text p {
+.main_section .letter_section .text p,
+.contact .letter_section .text p {
   position: absolute;
   bottom: 0;
   left: 56%;
@@ -180,7 +197,8 @@ body #wrap {
   font-size: var(--fontSize-40);
 }
 
-.main_section .letter_section .text::before {
+.main_section .letter_section .text::before,
+.contact .letter_section .text::before {
   content: "";
   width: 13.64%;
   height: 100%;
@@ -189,11 +207,10 @@ body #wrap {
   top: 0;
   left: 40%;
 }
-
 /* 편지end*/
 
 
-/* reveal text효과 */
+/* reveal text효과1 */
 .lenis.lenis-smooth {
   scroll-behavior: auto;
 }
@@ -219,7 +236,6 @@ body #wrap {
 
 .main_section_02 .container {
   /* position: relative; */
-
 }
 
 .main_section_02 .container .reveal {
@@ -230,8 +246,8 @@ body #wrap {
   line-height: 1.4;
   margin-top: 20rem;
 }
+/* reveal text 효과1 end */
 
-/* reveal text 효과 end */
 
 /* 날아가는 새 */
 #robin {
@@ -247,7 +263,6 @@ body #wrap {
 .about .letter_bg {
   background-image: url("../img/letter질감2_컬러.png")
     /* url링크만 쓸 수 있음. */
-
 }
 
 .about .letter_bg .inner {
@@ -377,35 +392,46 @@ body #wrap {
 
 .project .inner {}
 
+.project .inner h3 {
+  font-size: var(--fontSize-40);
+  font-weight: bold;
+  margin-bottom: 4rem;
+}
+
 .project .inner .tab_menu {
   display: flex;
-  gap: 8px;
-  margin-bottom: 2rem
+  gap: 2rem;
+  margin-bottom: 6rem;
+  cursor: pointer;
 }
 
 .project .inner .tab_menu li {
-  height: 4rem;
+  padding: 1rem 3rem;
+  border: 2px solid #F6A9CB;
   background-color: #ffff;
-  padding: 0 2rem;
-  border-radius: 2rem;
-  line-height: 4rem;
+}
+
+.project .inner .tab_menu li:hover {
+  background-color: #F6A9CB;
 }
 
 .project .inner .tab_menu li.active {
-  background-color: rgb(255, 4, 4);
+  background-color: #F6A9CB;
   color: #ffff;
 }
 
 .project .inner .list {
-  /* display: none; */
+  display: block;
+  /* 아래로 정렬 */
+  display: none;
 }
 
 .project .inner .list.active {
-  /* display: flex; */
+  display: block;
+  /* 보여지게 함 */
 }
 
 .project .inner .list .item {
-  width: 100%;
   height: 57.5rem;
   display: flex;
   gap: 14rem;
@@ -424,6 +450,7 @@ body #wrap {
 }
 
 .project .inner .list .item .text_section {
+  width: 67.6rem;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -514,11 +541,51 @@ body #wrap {
 }
 
 .project .inner .list .item:nth-child(4) .text_section .site_wrap .site,
-.project .inner .list .item:nth-child(5) .text_section .site_wrap .site {
+.project .inner .list .item:nth-child(5) .text_section .site_wrap .site,
+.project .inner .list:nth-child(2) .item:nth-child(2) .text_section .site_wrap .site {
   width: 31.3rem;
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
 
+/* design */
+.design {
+  width: 100%;
+}
+
+.design .swiper.mySwiper h3 {
+  font-size: var(--fontSize-40);
+  font-weight: bold;
+  margin-bottom: 5rem;
+}
+
+.design .swiper-slide {
+  height: 40rem;
+}
+
+.design .swiper-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.design .swiper-pagination-bullets {
+  /*  pagination 위치 조정 */
+  top: 50px;
+  bottom: auto !important;
+  /* 기본 bottom 값 덮어쓰기 */
+}
+
+.swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet,
+.swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+  --swiper-theme-color: #F6A9CB;
+}
+
+.swiper-button-prev,
+.swiper-rtl .swiper-button-next,
+.swiper-button-next,
+.swiper-rtl .swiper-button-next {
+  --swiper-theme-color: #F6A9CB;
 }

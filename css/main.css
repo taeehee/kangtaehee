@@ -69,14 +69,15 @@ section {
   padding: 2rem;
 }
 
-.main_section {
+.main_section,
+.contact {
   width: 100%;
   height: 100vh;
   padding-top: 200px;
 }
 
-.main_section .letter_section,
-.contact .letter_section {
+.main_section .letter_section_open,
+.contact .letter_section_close {
   height: 100% !important;
   width: 100%;
   top: 0;
@@ -85,15 +86,14 @@ section {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* position: fixed; <-- 이 코드를 제거합니다! */
 }
 
-.main_section .letter_section .title,
-.contact .letter_section .title {
+.main_section .letter_section_open .title,
+.contact .letter_section_close .title {
   width: 100%;
 }
 
-.main_section .letter_section .title p {
+.main_section .letter_section_open .title p {
   font-family: "Reenie Beanie";
   font-size: var(--fontSize-64);
   text-align: center;
@@ -103,29 +103,29 @@ section {
   /* 모션과 함께 적용되도록 transition 추가 (선택사항) */
 }
 
-.contact .letter_section .title p {
+.contact .letter_section_close .title p {
   font-family: 'Kyobo Handwriting 2021 sjy';
   font-size: var(--fontSize-40);
   text-align: center;
 
 }
 
-.main_section .letter_section .envelope_section,
-.contact .letter_section .envelope_section {
+.main_section .letter_section_open .envelope_section,
+.contact .letter_section_close .envelope_section {
   width: 100%;
   display: flex;
   justify-content: center;
 }
 
-.main_section .letter_section .envelope_section .envelope-wrap,
-.contact .letter_section .envelope_section .envelope-wrap {
+.main_section .letter_section_open .envelope_section .envelope-wrap,
+.contact .letter_section_close .envelope_section .envelope-wrap {
   position: relative;
   width: 40rem;
   height: 40rem;
 }
 
-.main_section .letter_section .envelope_section .envelope-wrap img,
-.contact .letter_section .envelope_section .envelope-wrap img {
+.main_section .letter_section_open .envelope_section .envelope-wrap img,
+.contact .letter_section_close .envelope_section .envelope-wrap img {
   position: absolute;
   left: 0;
   width: 100%;
@@ -136,40 +136,31 @@ section {
   /* 모션과 함께 적용되도록 transition 추가 (선택사항) */
 }
 
-.main_section .letter_section .envelope_section .envelope-wrap img:nth-child(4),
-.contact .letter_section .envelope_section .envelope-wrap img:nth-child(4) {
+.main_section .letter_section_open .envelope_section .envelope-wrap img:nth-child(4),
+.contact .letter_section_close .envelope_section .envelope-wrap img:nth-child(4) {
   width: 90%;
   position: absolute;
   left: 20px;
-  /* transform: translate(-50%,-50%); */
-  /* 왼쪽으로 7도 기울이기 */
-  /*  transform: rotate(-7deg);
-  transition: transform 0.5s ease; */
-  /* 모션과 함께 적용되도록 */
 }
 
-  /* 초기 상태 */
-.main_section .letter_section .envelope_section .envelope-wrap .envelope-closed,
-.contact .letter_section .envelope_section .envelope-wrap .envelope-closed {
+/* 봉투 초기 상태 1)open모션 2)close모션*/
+.main_section .letter_section_open .envelope_section .envelope-wrap .envelope-closed {
   opacity: 1;
   z-index: 4;
 }
 
-.main_section .letter_section .envelope_section .envelope-wrap .envelope-bod,
-.contact .letter_section .envelope_section .envelope-wrap .envelope-body {
+.main_section .letter_section_open .envelope_section .envelope-wrap .envelope-body {
   opacity: 1;
   z-index: 2;
 }
 
-.main_section .letter_section .envelope_section .envelope-wrap .envelope-flap,
-.contact .letter_section .envelope_section .envelope-wrap .envelope-flap {
+.main_section .letter_section_open .envelope_section .envelope-wrap .envelope-flap {
   transform-origin: top center;
   /* 뚜껑이 위로 열림 */
   z-index: 3;
 }
 
-.main_section .letter_section .envelope_section .envelope-wrap .letter,
-.contact .letter_section .envelope_section .envelope-wrap .letter {
+.main_section .letter_section_open .envelope_section .envelope-wrap .letter {
   position: absolute;
   top: 0;
   left: 0;
@@ -177,18 +168,42 @@ section {
   z-index: 1;
 }
 
-.main_section .letter_section .text,
-.contact .letter_section .text {
+
+.contact .letter_section_close .envelope_section .envelope-wrap .closed {
+  opacity: 1;
+  z-index: 4;
+}
+
+.contact .letter_section_close .envelope_section .envelope-wrap .body {
+  opacity: 1;
+  z-index: 2;
+}
+
+.contact .letter_section_close .envelope_section .envelope-wrap .flap {
+  transform-origin: top center;
+  /* 뚜껑이 위로 열림 */
+  z-index: 3;
+}
+
+.contact .letter_section_close .envelope_section .envelope-wrap .letter02 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* transform: translateY(120px); */
+  z-index: 1;
+}
+
+.main_section .letter_section_open .text,
+.contact .letter_section_close .text {
   width: 100%;
   height: 9rem;
   position: relative;
   margin-top: -110px;
   margin-left: 150px;
-
 }
 
-.main_section .letter_section .text p,
-.contact .letter_section .text p {
+.main_section .letter_section_open .text p,
+.contact .letter_section_close .text p {
   position: absolute;
   bottom: 0;
   left: 56%;
@@ -197,8 +212,8 @@ section {
   font-size: var(--fontSize-40);
 }
 
-.main_section .letter_section .text::before,
-.contact .letter_section .text::before {
+.main_section .letter_section_open .text::before,
+.contact .letter_section_close .text::before {
   content: "";
   width: 13.64%;
   height: 100%;
@@ -207,6 +222,7 @@ section {
   top: 0;
   left: 40%;
 }
+
 /* 편지end*/
 
 
@@ -246,6 +262,7 @@ section {
   line-height: 1.4;
   margin-top: 20rem;
 }
+
 /* reveal text 효과1 end */
 
 
@@ -589,3 +606,56 @@ section {
 .swiper-rtl .swiper-button-next {
   --swiper-theme-color: #F6A9CB;
 }
+
+/* contact */
+/* contact의 letter_section은 위에서 main_section과 함께 씀 */
+.contact .info {
+display: flex;
+flex-direction: column;
+align-items: center;
+row-gap: 2.4rem;
+}
+
+.contact .info strong {
+  font-size: var(--fontSize-64);
+  color: #F6A9CB;
+}
+
+.contact .info .info_wrap {
+  width: 51.4rem;
+  height: 13.3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact .info .info_wrap img {
+  display: block;
+  height: 100%;
+}
+
+.contact .info .info_wrap .qr {
+  width: 13.3rem;
+  height: 13.3rem;
+}
+
+.contact .info .info_wrap .text_wrap {}
+
+.contact .info .info_wrap .text_wrap .text {
+  display: flex;
+  gap: 5rem;
+}
+
+.contact .info .info_wrap .text_wrap .text .field {
+  font-weight: 600;
+}
+
+.contact .info .info_wrap .text_wrap .text p {}
+
+
+/* footer */
+.footer {}
+
+.footer .inner {}
+
+.footer .inner p {}

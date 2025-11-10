@@ -5,7 +5,7 @@ $(function () {
   // 편지 애니메이션 (타임라인1)
   let tl = gsap.timeline({
     scrollTrigger: {
-      trigger: ".letter_section",
+      trigger: ".letter_section_open",
       start: "top 200px", /* 헤더높이부터 편지위치 고정 */
       /* end: "bottom 0%", 초기값*/
       end: () => `+=${window.innerHeight * 4}px`,
@@ -66,11 +66,6 @@ document.querySelectorAll('.reveal').forEach(text => {
 //reveal text효과 end
 
 
-
-
-
-
-
   // 새 애니메이션 (타임라인2)
   gsap.registerPlugin(MotionPathPlugin);
 
@@ -93,8 +88,27 @@ gsap.to("#robin", {
   // 새 애니메이션end (타임라인2)
 
 
-  
+    gsap.registerPlugin(ScrollTrigger, MotionPathPlugin);
 
-  
-  
+  // 마지막 편지 애니메이션 (타임라인2)
+  let tl2 = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".letter_section_close",
+      start: "top 200px", /* 헤더높이부터 편지위치 고정 */
+      /* end: "bottom 0%", 초기값*/
+      end: () => `+=${window.innerHeight * 3}px`,
+      /* 뷰포트 높이의 3배만큼 스크롤했을 때 */
+      scrub: true,
+      pin: true,
+      markers: true
+    }
+  });
+
+  tl2.fromTo(".closed", { opacity: 0 }, { opacity: 1, duration: 0.5, zIndex: 4 }, "-=0.2")
+    .fromTo(".body", {  opacity: 1 }, { zIndex: 3 })
+    .fromTo(".flap", {  rotationX: -180, duration: 2, ease: "power2.inOut", zIndex: 0}, {  rotationX: 0, transformOrigin: "top center",  zIndex: 4 })
+    .fromTo(".letter02", { y: -210, opacity: 1, duration: 1, /* ease: "power2.inOut",  */ }, { y: 41, opacity: 1, zIndex: 2}, 0.2); /* 0.2초 후 시작 */
+
+  // 마지막 편지 애니메이션end (타임라인2)
+
 });

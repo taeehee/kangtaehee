@@ -33,7 +33,6 @@ body #wrap {
   left: 0;
   /* 헤더고정 */
   z-index: 999999;
-
 }
 
 .header .inner {
@@ -77,7 +76,7 @@ body #wrap {
   width: 100%;
   top: 0;
   left: 0;
- 
+
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -85,9 +84,9 @@ body #wrap {
   /* position: fixed; <-- 이 코드를 제거합니다! */
 
 }
-.pin-spacer {
-  
-}
+
+.pin-spacer {}
+
 .main_section .letter_section .title {
   width: 100%;
 }
@@ -97,7 +96,7 @@ body #wrap {
   font-size: var(--fontSize-64);
   text-align: center;
   /* 왼쪽으로 7도 기울이기 */
-/*   transform: rotate(-7deg);
+  /*   transform: rotate(-7deg);
   transition: transform 0.5s ease; */
   /* 모션과 함께 적용되도록 transition 추가 (선택사항) */
 }
@@ -134,7 +133,7 @@ body #wrap {
   left: 20px;
   /* transform: translate(-50%,-50%); */
   /* 왼쪽으로 7도 기울이기 */
- /*  transform: rotate(-7deg);
+  /*  transform: rotate(-7deg);
   transition: transform 0.5s ease; */
   /* 모션과 함께 적용되도록 */
 }
@@ -211,19 +210,19 @@ body #wrap {
   pointer-events: none;
 }
 
-section {
+.main_section_02 {
   /*   display: flex;
   align-items: center;
   justify-content: center; */
   min-height: 100vh;
 }
 
-.container {
+.main_section_02 .container {
   /* position: relative; */
 
 }
 
-.reveal {
+.main_section_02 .container .reveal {
   font-family: 'Kyobo Handwriting 2021 sjy';
   font-kerning: none;
   text-transform: uppercase;
@@ -246,67 +245,280 @@ section {
 }
 
 .about .letter_bg {
-  background-image: url("../img/letter질감2_컬러.png") /* center center/100% no-repeat; */
+  background-image: url("../img/letter질감2_컬러.png")
+    /* url링크만 쓸 수 있음. */
+
 }
 
 .about .letter_bg .inner {
-  width: 100%; /* 컨테이너w */
+  width: 100%;
+  /* 컨테이너w */
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5.1rem 0 8.9rem 0;
 }
 
-.about .letter_bg .inner .profile_left {
-  width: 25.65%;
+.about .letter_bg .inner .left_wrap {
+  width: 39rem;
+  /* 25.65%; */
 }
 
-.about .letter_bg .inner .profile_left .image {
+.about .letter_bg .inner .left_wrap .photo {
   width: 100%;
   height: 42.4rem;
+  transform: rotate(5deg);
+  position: relative;
+  margin-bottom: 4rem;
 }
 
-.about .letter_bg .inner .profile_left .image img {
+.about .letter_bg .inner .left_wrap .photo::before {
+  content: "";
+  width: 38.16rem;
+  height: 38.16rem;
+  background: url("../img/clip.png") center center/100% no-repeat;
+  position: absolute;
+  top: -19.5rem;
+  left: -6.6rem;
+  z-index: 999;
+}
+
+.about .letter_bg .inner .left_wrap .photo img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transform: rotate(7deg);
 }
 
-.about .letter_bg .inner .profile_left .info_section {
+.about .letter_bg .inner .left_wrap .info_wrap {
   width: 100%;
   padding: 0 0 0 3rem;
 }
 
-.about .letter_bg .inner .profile_left .info_section .info_wrap {
+.about .letter_bg .inner .left_wrap .info_wrap .info {
   width: 100%;
+  display: flex;
+  gap: 1.7rem;
+}
 
+.about .letter_bg .inner .left_wrap .info_wrap .info .field {
+  width: 8rem;
+  font-weight: 600;
+}
 
+.about .letter_bg .inner .left_wrap .info_wrap .info p {
+  font-size: var(--fontSize-20);
+}
+
+.about .letter_bg .inner .right_wrap {
+  width: 102.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.about .letter_bg .inner .right_wrap strong {
+  width: 100%;
+  font-weight: 600;
+}
+
+.about .letter_bg .inner .right_wrap .aboutme,
+.about .letter_bg .inner .right_wrap .career,
+.about .letter_bg .inner .right_wrap .education,
+.about .letter_bg .inner .right_wrap .skill {
+  border: 0.1rem solid #777777;
+  padding: 2.4rem 2rem;
+}
+
+.about .letter_bg .inner .right_wrap .text_wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 0 0 0 13.1rem;
+  margin-top: 3rem;
+}
+
+.about .letter_bg .inner .right_wrap .text_wrap .text {
+  display: flex;
+  align-items: end;
+  gap: 2rem;
+}
+
+.about .letter_bg .inner .right_wrap .text_wrap .text .what {
+  font-size: var(--fontSize-20);
+  font-weight: 400;
+}
+
+.about .letter_bg .inner .right_wrap .text_wrap .text .date {
+  font-size: var(--fontSize-18);
+  font-weight: 400;
+  color: #7777;
+}
+
+.about .letter_bg .inner .right_wrap .skill .list {
+  display: flex;
+  gap: 2rem;
+  padding: 0 0 0 13.1rem;
+  margin-top: 3rem;
+}
+
+.about .letter_bg .inner .right_wrap .skill .list .image {
+  width: 4.7rem;
+  height: 4.7rem;
+}
+
+.about .letter_bg .inner .right_wrap .skill .list .image img {
+  height: 100%;
 
 }
 
-.about .letter_bg .inner .profile_left .info_section .info_wrap .info {}
-
-.about .letter_bg .inner .profile_left .info_section .info_wrap .info li {}
-
-.about .letter_bg .inner .profile_left .info_section .profile_right {}
-
-.about .letter_bg .inner .profile_left .info_section .profile_right .title {}
-
-.about .letter_bg .inner .profile_left .info_section .profile_right .title .text_wrap {}
-
-.about .letter_bg .inner .profile_left .info_section .profile_right .title .text_wrap .left_text {}
-
-.about .letter_bg .inner .profile_left .info_section .profile_right .title .text_wrap .left_text li {}
-
-.about .letter_bg .inner .profile_left .info_section .profile_right .title .text_wrap .right_text {}
-
-.about .letter_bg .inner .profile_left .info_section .profile_right .title .text_wrap .right_text li {}
-.about .letter_bg .inner .profile_left .info_section .profile_right .title .skill {
+/* project */
+.project {
   width: 100%;
+}
+
+.project .inner {}
+
+.project .inner .tab_menu {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 2rem
+}
+
+.project .inner .tab_menu li {
+  height: 4rem;
+  background-color: #ffff;
+  padding: 0 2rem;
+  border-radius: 2rem;
+  line-height: 4rem;
+}
+
+.project .inner .tab_menu li.active {
+  background-color: rgb(255, 4, 4);
+  color: #ffff;
+}
+
+.project .inner .list {
+  /* display: none; */
+}
+
+.project .inner .list.active {
+  /* display: flex; */
+}
+
+.project .inner .list .item {
+  width: 100%;
+  height: 57.5rem;
+  display: flex;
+  gap: 14rem;
+}
+
+.project .inner .list .item .image {
+  width: 70.4rem;
+  height: 57.5rem;
+
+}
+
+.project .inner .list .item .image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.project .inner .list .item .text_section {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 4rem;
+}
+
+.project .inner .list .item .text_section strong {
+  font-size: var(--fontSize-35);
+}
+
+.project .inner .list .item .text_section .text_wrap {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
+}
+
+.project .inner .list .item .text_section .text_wrap .text {
+  display: flex;
+  align-items: center;
+  gap: 5rem;
+}
+
+.project .inner .list .item .text_section .text_wrap .text .field {
+  width: 8rem;
+  font-size: var(--fontSize-20);
+  font-weight: 600;
+}
+
+.project .inner .list .item .text_section .text_wrap .text p {}
+
+.project .inner .list .item .text_section .site_wrap {
+  height: 10.9rem;
+  display: flex;
+  gap: 2.9rem;
+}
+
+.project .inner .list .item .text_section .site_wrap img {
+  width: 10.9rem;
+  height: 100%;
+}
+
+.project .inner .list .item .text_section .site_wrap .site {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.project .inner .list .item .text_section .site_wrap .site .pnf {
   display: flex;
   gap: 2rem;
 }
-.about .letter_bg .inner .profile_left .info_section .profile_right .title .skill img {
-  width: 4.7rem;
-  height: 4.7rem;
 
+.project .inner .list .item .text_section .site_wrap .site .pnf li {
+  padding: 1rem 3rem;
+  background-color: #ffff;
+  border: 2px, solid, #F6A9CB;
+
+}
+
+.project .inner .list .item .text_section .site_wrap .site .pnf li:hover {
+  background-color: #F6A9CB;
+}
+
+.project .inner .list .item .text_section .site_wrap .site .pnf li a {
+  display: block;
+  width: 100%;
+}
+
+.project .inner .list .item .text_section .site_wrap .site .web {
+  text-align: center;
+  padding: 1rem 3rem;
+  background-color: #ffff;
+  border: 2px, solid, #F6A9CB;
+}
+
+.project .inner .list .item .text_section .site_wrap .site .web:hover {
+  background-color: #F6A9CB;
+}
+
+.project .inner .list .item .text_section .site_wrap .site .web::marker {
+  color: white;
+}
+
+.project .inner .list .item .text_section .site_wrap .site .web li a {
+  width: 100%;
+  display: block;
+}
+
+.project .inner .list .item:nth-child(4) .text_section .site_wrap .site,
+.project .inner .list .item:nth-child(5) .text_section .site_wrap .site {
+  width: 31.3rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 
 }

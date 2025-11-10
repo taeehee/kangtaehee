@@ -96,7 +96,7 @@ gsap.to("#robin", {
       trigger: ".letter_section_close",
       start: "top 200px", /* 헤더높이부터 편지위치 고정 */
       /* end: "bottom 0%", 초기값*/
-      end: () => `+=${window.innerHeight * 3}px`,
+      end: () => `+=${window.innerHeight * 5}px`,
       /* 뷰포트 높이의 3배만큼 스크롤했을 때 */
       scrub: true,
       pin: true,

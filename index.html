@@ -8,6 +8,8 @@
   <!-- <link rel="stylesheet" href="css/main.scss"> -->
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" /><!-- swiper -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" /><!-- 팬시박스 -->
+  />
 
   <script src="lib/jquery-3.7.1.min.js"></script> <!-- 제이쿼리 -->
 
@@ -20,6 +22,7 @@
   <!-- main.js는 jQuery와 GSAP 다음에 로드합니다. (defer 제거) -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script><!-- swiper -->
   <script src="js/main.js"></script> <!-- js파일 -->
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script><!-- 팬시박스 -->
 
   <script>
     window.onload = () => {
@@ -544,23 +547,23 @@
             <h3>DESIGN</h3>
             <div class="swiper-wrapper">
               <div class="swiper-slide">
-                <img src="img/bird.jpg" alt="포토샵1">
+                <a href="img/bird.jpg" data-fancybox="gallery"><img src="img/bird.jpg" alt="포토샵1"></a>
               </div><!-- swiper-slide  -->
 
               <div class="swiper-slide">
-                <img src="img/bird.jpg" alt="포토샵2">
+                <a href="#" data-fancybox="gallery"><img src="img/closed.png" alt="포토샵2"></a>
               </div><!-- swiper-slide  -->
 
               <div class="swiper-slide">
-                <img src="img/bird.jpg" alt="포토샵3">
+                <a href="#" data-fancybox="gallery"><img src="img/flap.png" alt="포토샵3"></a>
               </div><!-- swiper-slide  -->
 
               <div class="swiper-slide">
-                <img src="img/bird.jpg" alt="포토샵4">
+                <a href="#" data-fancybox><img src="img/body.png" alt="포토샵4"></a>
               </div><!-- swiper-slide  -->
 
               <div class="swiper-slide">
-                <img src="img/bird.jpg" alt="포토샵5">
+                <a href="#" data-fancybox><img src="img/bird.jpg" alt="포토샵5"></a>
               </div><!-- swiper-slide  -->
             </div><!-- swiper-wrapper end -->
 
@@ -570,6 +573,7 @@
           </div><!-- swiper mySwiper end -->
 
         </section><!-- design end -->
+
 
         <section class="contact">
           <div class="letter_section_close">
@@ -625,4 +629,5 @@
   </div><!-- #wrap -->
 
 </body>
+
 </html>

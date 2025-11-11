@@ -111,4 +111,9 @@ gsap.to("#robin", {
 
   // 마지막 편지 애니메이션end (타임라인2)
 
+
+  Fancybox.bind("[data-fancybox]", { 
+	// Your options go here 
+});
+
 });

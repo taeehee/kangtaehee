@@ -481,6 +481,10 @@ section {
   height: 50rem;
 }
 
+.project .inner .list .item .image.big {
+  width: 73rem;
+}
+
 .project .inner .list .item .image img {
   width: 100%;
   height: 100%;
@@ -500,7 +504,8 @@ section {
   display: flex;
   flex-direction: column;
   row-gap: 4rem;
-  justify-content: center;
+  justify-content: flex-start;
+  padding: 1rem 0 0 0;
 }
 
 .project .inner .list .item .text_section strong {

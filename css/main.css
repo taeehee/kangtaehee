@@ -413,7 +413,7 @@ section {
   width: calc(100% - 80px);
   margin: 0 auto;
   display: flex;
-  gap: 11rem
+  gap: 11rem;
     /* 스티키섹션과 list사이 거리 */
 }
 
@@ -463,11 +463,23 @@ section {
   flex-direction: column;
   display: none;
   row-gap: 18rem;
+  position: relative; /* 가상요소 기준 */
 }
+
 
 .project .inner .list.active {
   display: flex;
   /* 보여지게 함 */
+}
+
+.project .inner .list::before {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 100%;
+  background-color: #F6A9CB;
+  top: 0;
+  left: -8rem;
 }
 
 .project .inner .list .item {

@@ -76,7 +76,20 @@ section {
   padding-top: 200px;
 }
 
-.main_section .letter_section_open,
+.main_section .letter_section_open
+
+/* .contact .letter_section_close */
+  {
+  height: 100% !important;
+  width: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .contact .letter_section_close {
   height: 100% !important;
   width: 100%;
@@ -88,9 +101,19 @@ section {
   align-items: center;
 }
 
-.main_section .letter_section_open .title,
-.contact .letter_section_close .title {
+.main_section .letter_section_open .title {
   width: 100%;
+  position: absolute;
+  top: 13rem
+}
+
+.contact .letter_section_close .title {
+  /* title문구와 편지 사이 거리 */
+  position: absolute;
+  /* 기준은 letter_section_close:fixed */
+  top: -170px;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .main_section .letter_section_open .title p {
@@ -107,14 +130,16 @@ section {
   font-family: 'Kyobo Handwriting 2021 sjy';
   font-size: var(--fontSize-40);
   text-align: center;
-
 }
 
 .main_section .letter_section_open .envelope_section,
 .contact .letter_section_close .envelope_section {
+  /* position:relativer기준 부모인 .letter_section_open  */
   width: 100%;
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */
+  position: absolute;
+  left: 40%;
 }
 
 .main_section .letter_section_open .envelope_section .envelope-wrap,
@@ -193,7 +218,17 @@ section {
   z-index: 1;
 }
 
-.main_section .letter_section_open .text,
+.main_section .letter_section_open .text {
+  width: 100%;
+  height: 9rem;
+  position: relative;
+  position: absolute; /* 기준은  envelope_section */
+  bottom: 24.8rem;
+  left: 7.3rem;
+
+
+}
+
 .contact .letter_section_close .text {
   width: 100%;
   height: 9rem;
@@ -414,7 +449,7 @@ section {
   margin: 0 auto;
   display: flex;
   gap: 12rem;
-    /* 스티키섹션과 list사이 거리 */
+  /* 스티키섹션과 list사이 거리 */
 }
 
 .project .inner .section_sticky {
@@ -439,7 +474,7 @@ section {
 }
 
 .project .inner .section_sticky .tab_menu li {
-  padding: 1rem 1rem;
+  padding: 1rem rem;
   border-bottom: 2px solid #F6A9CB;
   background-color: #ffff;
 }
@@ -464,7 +499,8 @@ section {
   flex-direction: column;
   display: none;
   row-gap: 18rem;
-  position: relative; /* 가상요소 기준 */
+  position: relative;
+  /* 가상요소 기준 */
 }
 
 

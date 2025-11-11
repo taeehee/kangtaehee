@@ -413,7 +413,7 @@ section {
   width: calc(100% - 80px);
   margin: 0 auto;
   display: flex;
-  gap: 11rem;
+  gap: 12rem;
     /* 스티키섹션과 list사이 거리 */
 }
 
@@ -435,11 +435,12 @@ section {
   width: 100%;
   display: flex;
   cursor: pointer;
+  gap: 1rem;
 }
 
 .project .inner .section_sticky .tab_menu li {
-  padding: 1rem 2.4rem;
-  border: 2px solid #F6A9CB;
+  padding: 1rem 1rem;
+  border-bottom: 2px solid #F6A9CB;
   background-color: #ffff;
 }
 
@@ -479,7 +480,7 @@ section {
   height: 100%;
   background-color: #F6A9CB;
   top: 0;
-  left: -8rem;
+  left: -9rem;
 }
 
 .project .inner .list .item {

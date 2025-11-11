@@ -448,7 +448,7 @@ section {
   width: calc(100% - 80px);
   margin: 0 auto;
   display: flex;
-  gap: 12rem;
+  gap: 15rem;
   /* 스티키섹션과 list사이 거리 */
 }
 
@@ -474,7 +474,7 @@ section {
 }
 
 .project .inner .section_sticky .tab_menu li {
-  padding: 1rem rem;
+  padding: 1rem 2rem;
   border-bottom: 2px solid #F6A9CB;
   background-color: #ffff;
 }

@@ -417,10 +417,16 @@ section {
 }
 
 .project .inner .tab_menu {
+  width: 100%;
+  background-color: #ffffff;
+  border-bottom: 1px, solid, #F6A9CB;
   display: flex;
   gap: 2rem;
   margin-bottom: 6rem;
   cursor: pointer;
+  position: sticky;
+  /* 탭메뉴 스크롤 고정 */
+  top: 10rem;
 }
 
 .project .inner .tab_menu li {
@@ -439,13 +445,15 @@ section {
 }
 
 .project .inner .list {
-  display: block;
-  /* 아래로 정렬 */
+  display: flex;
+  flex-direction: column;
   display: none;
 }
 
 .project .inner .list.active {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  row-gap: 18rem;
   /* 보여지게 함 */
 }
 
@@ -453,6 +461,7 @@ section {
   height: 57.5rem;
   display: flex;
   gap: 14rem;
+
 }
 
 .project .inner .list .item .image {
@@ -473,6 +482,7 @@ section {
   display: flex;
   flex-direction: column;
   row-gap: 4rem;
+  justify-content: center;
 }
 
 .project .inner .list .item .text_section strong {
@@ -500,9 +510,16 @@ section {
 .project .inner .list .item .text_section .text_wrap .text p {}
 
 .project .inner .list .item .text_section .site_wrap {
-  width: 10.9rem;
+  width: 100%;
   display: flex;
-  gap: 2.9rem;
+  gap: 2rem;
+}
+
+.project .inner .list .item .text_section .site_wrap.long .site {
+  /* .site_wrap에 class명 .long이 붙었을 때 */
+  width: 30.3rem;
+  height: 100%;
+  justify-content: center;
 }
 
 .project .inner .list .item .text_section .site_wrap img {
@@ -511,16 +528,16 @@ section {
 }
 
 .project .inner .list .item .text_section .site_wrap .site {
+  width: 30.3rem;
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
-
 .project .inner .list .item .text_section .site_wrap .site .pnf {
   display: flex;
-  gap: 2rem;
+  gap: 1rem;
 }
 
 .project .inner .list .item .text_section .site_wrap .site .pnf li {
@@ -532,6 +549,7 @@ section {
 
 .project .inner .list .item .text_section .site_wrap .site .pnf li:hover {
   background-color: #F6A9CB;
+  color: #ffffff;
 }
 
 .project .inner .list .item .text_section .site_wrap .site .pnf li a {
@@ -543,11 +561,13 @@ section {
   text-align: center;
   padding: 1rem 3rem;
   background-color: #ffff;
-  border: 2px, solid, #F6A9CB;
+  /* border: 2px, solid, #F6A9CB; */
+  background-color: #F6A9CB;
 }
 
 .project .inner .list .item .text_section .site_wrap .site .web:hover {
   background-color: #F6A9CB;
+  color: #ffffff;
 }
 
 .project .inner .list .item .text_section .site_wrap .site .web::marker {
@@ -557,16 +577,6 @@ section {
 .project .inner .list .item .text_section .site_wrap .site .web li a {
   width: 100%;
   display: block;
-}
-
-.project .inner .list .item:nth-child(4) .text_section .site_wrap .site,
-.project .inner .list .item:nth-child(5) .text_section .site_wrap .site,
-.project .inner .list:nth-child(2) .item:nth-child(2) .text_section .site_wrap .site {
-  width: 31.3rem;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
 }
 
 /* design */
@@ -580,10 +590,12 @@ section {
   font-weight: bold;
   margin-bottom: 5rem;
 }
+
 .design .swiper-wrapper {
   position: static;
   /* 포지션relativ 초기화 */
 }
+
 .design .swiper-slide {
   height: 40rem;
 }
@@ -594,19 +606,6 @@ section {
   object-fit: cover;
 }
 
-.design .swiper-pagination-bullets {
-  /*  pagination 위치 조정 */
-  position: absolute;
-  top: 0;
-  left: 0;
-
-}
-
-.swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet,
-.swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
-  --swiper-theme-color: #F6A9CB;
-}
-
 .swiper-button-prev,
 .swiper-rtl .swiper-button-next,
 .swiper-button-next,
@@ -614,13 +613,28 @@ section {
   --swiper-theme-color: #F6A9CB;
 }
 
+/* 화살표 */
+
+.swiper-horizontal>.swiper-pagination-bullets,
+.swiper-pagination-bullets.swiper-pagination-horizontal,
+.swiper-pagination-custom,
+.swiper-pagination-fraction {
+  position: absolute;
+  top: 0;
+  left: 0;
+  --swiper-theme-color: #F6A9CB;
+
+}
+
+/* 페이지네이션 */
+
 /* contact */
 /* contact의 letter_section은 위에서 main_section과 함께 씀 */
 .contact .info {
-display: flex;
-flex-direction: column;
-align-items: center;
-row-gap: 2.4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 2.4rem;
 }
 
 .contact .info strong {
@@ -632,9 +646,10 @@ row-gap: 2.4rem;
   width: 51.4rem;
   height: 13.3rem;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   margin-bottom: 20rem;
+
 }
 
 .contact .info .info_wrap img {
@@ -651,7 +666,7 @@ row-gap: 2.4rem;
 
 .contact .info .info_wrap .text_wrap .text {
   display: flex;
-  gap: 5rem;
+  gap: 2rem;
 }
 
 .contact .info .info_wrap .text_wrap .text .field {

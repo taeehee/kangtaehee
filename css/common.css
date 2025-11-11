@@ -20,7 +20,7 @@
 .main_section_02 .container,
 .section01 .inner,
 .about .letter_bg .inner,
-.project .inner,
+/* .project .inner, */
 .design .swiper.mySwiper {
   max-width: 1520px;
   width: calc(100% - 56px);

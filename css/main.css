@@ -405,69 +405,80 @@ section {
 
 /* project */
 .project {
-  width: 100%;
+  /* width: 100%; */
 }
 
-.project .inner {}
+.project .inner {
+  max-width: 1920px;
+  width: calc(100% - 80px);
+  margin: 0 auto;
+  display: flex;
+  gap: 11rem
+    /* 스티키섹션과 list사이 거리 */
+}
 
-.project .inner h3 {
+.project .inner .section_sticky {
+  /* width: 16%; */
+  height: 100%;
+  position: sticky;
+  top: 20rem;
+  /* 탭메뉴 스크롤 고정 */
+}
+
+.project .inner .section_sticky h3 {
   font-size: var(--fontSize-40);
   font-weight: bold;
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
 }
 
-.project .inner .tab_menu {
+.project .inner .section_sticky .tab_menu {
   width: 100%;
-  background-color: #ffffff;
-  border-bottom: 1px, solid, #F6A9CB;
   display: flex;
-  gap: 2rem;
-  margin-bottom: 6rem;
   cursor: pointer;
-  position: sticky;
-  /* 탭메뉴 스크롤 고정 */
-  top: 10rem;
 }
 
-.project .inner .tab_menu li {
-  padding: 1rem 3rem;
+.project .inner .section_sticky .tab_menu li {
+  padding: 1rem 2.4rem;
   border: 2px solid #F6A9CB;
   background-color: #ffff;
 }
 
-.project .inner .tab_menu li:hover {
-  background-color: #F6A9CB;
+.project .inner .section_sticky .tab_menu li:nth-child(1) {
+  border-right: 0;
 }
 
-.project .inner .tab_menu li.active {
+.project .inner .section_sticky .tab_menu li:hover {
+  background-color: #F6A9CB;
+  color: #ffff;
+}
+
+.project .inner .section_sticky .tab_menu li.active {
   background-color: #F6A9CB;
   color: #ffff;
 }
 
 .project .inner .list {
+  width: 83%;
   display: flex;
   flex-direction: column;
   display: none;
+  row-gap: 18rem;
 }
 
 .project .inner .list.active {
   display: flex;
-  flex-direction: column;
-  row-gap: 18rem;
   /* 보여지게 함 */
 }
 
 .project .inner .list .item {
-  height: 57.5rem;
+  width: 100%;
   display: flex;
-  gap: 14rem;
-
+  gap: 8rem;
 }
 
 .project .inner .list .item .image {
-  width: 70.4rem;
-  height: 57.5rem;
-
+  /* image크기에 따라 item영역 분배됨 */
+  height: 50rem;
 }
 
 .project .inner .list .item .image img {
@@ -476,9 +487,16 @@ section {
   object-fit: cover;
 }
 
-.project .inner .list .item .text_section {
-  width: 67.6rem;
+.project .inner .list .item .image img {
+  /* .image에 class명 .contain 붙었을 때 */
+  width: 100%;
   height: 100%;
+  object-fit: cover;
+}
+
+
+.project .inner .list .item .text_section {
+  /* height: 100%; */
   display: flex;
   flex-direction: column;
   row-gap: 4rem;
@@ -511,6 +529,8 @@ section {
 
 .project .inner .list .item .text_section .site_wrap {
   width: 100%;
+  height: 10.9rem;
+  ;
   display: flex;
   gap: 2rem;
 }
@@ -561,13 +581,13 @@ section {
   text-align: center;
   padding: 1rem 3rem;
   background-color: #ffff;
-  /* border: 2px, solid, #F6A9CB; */
   background-color: #F6A9CB;
+  color: #ffff;
 }
 
 .project .inner .list .item .text_section .site_wrap .site .web:hover {
   background-color: #F6A9CB;
-  color: #ffffff;
+  color: #000000
 }
 
 .project .inner .list .item .text_section .site_wrap .site .web::marker {

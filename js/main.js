@@ -110,8 +110,6 @@ $(function () {
     .fromTo(".letter02", { y: -210, opacity: 1, duration: 0.3, /* ease: "power2.inOut",  */ }, { y: 19, opacity: 1, zIndex: 2 },0.2); 
 
   // 마지막 편지 애니메이션end (타임라인2)
-  //깃업로드용 메시지 입력
-
 
 
 });

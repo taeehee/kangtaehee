@@ -70,16 +70,30 @@ section {
   padding: 2rem;
 }
 
-.main_section,
-.contact {
+.main_section {
   width: 100%;
   height: 100vh;
   padding-top: 200px;
 }
 
-.main_section .letter_section_open,
-.contact .letter_section_close {
+.contact {
+  width: 100%;
+  height: 100vh;
+}
+
+.main_section .letter_section_open {
   height: 100% !important;
+  width: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact .letter_section_close {
+  height: 100vh;
   width: 100%;
   top: 0;
   left: 0;
@@ -174,7 +188,6 @@ section {
   /* transform: translateY(120px); */
   z-index: 1;
 }
-
 
 .contact .letter_section_close .envelope_section .envelope-wrap .closed {
   opacity: 1;
@@ -639,7 +652,10 @@ section {
   position: relative;
 }
 
-.design .swiper.mySwiper {}
+.design .swiper.mySwiper {
+  position: static;
+  /* 포지션relativ 초기화 */
+}
 
 .design .swiper.mySwiper h3 {
   font-size: var(--fontSize-40);
@@ -648,8 +664,8 @@ section {
 }
 
 .design .swiper-wrapper {
-  position: static;
-  /* 포지션relativ 초기화 */
+  display: flex;
+  align-items: center;
 }
 
 .design .swiper-slide {
@@ -659,33 +675,40 @@ section {
 .design .swiper-slide img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .swiper-button-prev,
 .swiper-rtl .swiper-button-next,
 .swiper-button-next,
 .swiper-rtl .swiper-button-next {
-  --swiper-theme-color: #F6A9CB;
+  /* 화살표 */
+  --swiper-theme-color: #ffffff;
 }
-
-/* 화살표 */
 
 .swiper-horizontal>.swiper-pagination-bullets,
 .swiper-pagination-bullets.swiper-pagination-horizontal,
 .swiper-pagination-custom,
 .swiper-pagination-fraction {
-  position: absolute;
-  top: 0;
-  left: 0;
+  /* 페이지네이션 */
   --swiper-theme-color: #F6A9CB;
-
 }
 
-/* 페이지네이션 */
+.swiper-horizontal>.swiper-pagination-bullets,
+.swiper-pagination-bullets.swiper-pagination-horizontal,
+.swiper-pagination-custom,
+.swiper-pagination-fraction {
+  position: inherit;
+  top: 525px;
+  width: 100%;
+}
 
 /* contact */
 /* contact의 letter_section은 위에서 main_section과 함께 씀 */
+.contact .letter_section_close {
+  margin-bottom: 10rem;
+}
+
 .contact .info {
   display: flex;
   flex-direction: column;

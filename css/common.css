@@ -21,7 +21,7 @@
 .section01 .inner,
 .about .letter_bg .inner,
 /* .project .inner, */
-.design .swiper.mySwiper {
+.design .swiper.mySwiper{
   max-width: 1520px;
   width: calc(100% - 56px);
   margin: 0 auto;

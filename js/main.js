@@ -12,7 +12,7 @@ $(function () {
       /* 뷰포트 높이의 4배만큼 스크롤했을 때 */
       scrub: true,
       pin: true,
-      markers: true
+      /* markers: true */
     }
   });
   tl.fromTo(".envelope-closed", { opacity: 1 }, { opacity: 0, duration: 0.5 })
@@ -58,7 +58,7 @@ $(function () {
         /* 초기값: 뷰포트 높이의 4배만큼 스크롤했을 때 */
         scrub: true,
         pin: true,
-        markers: true
+        /* markers: true */
       }
     })
   })
@@ -99,7 +99,7 @@ $(function () {
       /* 뷰포트 높이의 2배만큼 스크롤했을 때 */
       scrub: true,
       pin: true,
-      markers: true
+      /* markers: true */
     }
   });
 

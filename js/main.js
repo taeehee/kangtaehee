@@ -65,26 +65,21 @@ $(function () {
   //reveal text효과 end
 
 
-  // 새 애니메이션 (타임라인2)
- /*  gsap.registerPlugin(MotionPathPlugin);
+  // 새 애니메이션
 
-  gsap.to("#robin", {
-    duration: 4,
-    motionPath: {
-      path: [
-        { x: 900, y: 100 },
-        { x: 700, y: 100 },
-        { x: 500, y: 100 },
-        { x: 300, y: 100 },
-        { x: 100, y: 180 }
-      ],
-      curviness: 1.25
+  gsap.to('.js-gypaete-wrapper', {
+    left: '80%', /* 왼쪽에서 80%에 고정 */
+    translateY: 0,
+    translateX: 0,
+    ease: 'none',
+    start: "center top",
+    yoyo: true, // 애니메이션이 끝난 후 반대 방향으로 되감기
+    scrollTrigger: {
+      trigger: '.js-gypaete-section',
+      scrub: 1,
+      markers: true
     },
-    ease: "power1.inOut",
-    repeat: -1,
-    repeatDelay: 1.5
-  }); */
-  // 새 애니메이션end (타임라인2)
+  });
 
 
   gsap.registerPlugin(ScrollTrigger, MotionPathPlugin);
@@ -107,7 +102,7 @@ $(function () {
     .fromTo(".body", { opacity: 1 }, { zIndex: 3 })
     .fromTo(".flap", { rotationX: -180, duration: 2, ease: "power2.inOut", zIndex: 0 }, { rotationX: 0, transformOrigin: "top center", zIndex: 4 })
     .fromTo(".closed", { opacity: 0 }, { opacity: 1, /* zIndex: 4 */ }, "1") /* 1초 후 시작 */
-    .fromTo(".letter02", { y: -210, opacity: 1, duration: 0.3, /* ease: "power2.inOut",  */ }, { y: 19, opacity: 1, zIndex: 2 },0.2); 
+    .fromTo(".letter02", { y: -210, opacity: 1, duration: 0.3, /* ease: "power2.inOut",  */ }, { y: 19, opacity: 1, zIndex: 2 }, 0.2);
 
   // 마지막 편지 애니메이션end (타임라인2)
 

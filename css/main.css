@@ -294,16 +294,48 @@ section {
 /* reveal text 효과1 end */
 
 
-/* 날아가는 새 */
-#robin {
-  width: 8em;
+/* 편지전달하는 새 */
+.main_section_02 .app .container .section-gypaete {
+  height: 100vh;
 }
 
-/* 날아가는 새 end */
-
-.about {
-  width: 100%;
+.main_section_02 .app .container .js-gypaete-section {
+    height: 150vh;
 }
+
+
+.main_section_02 .app .container .section-gypaete .gypaete {
+  max-width: 300px;
+  animation-name: floating;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+.main_section_02 .app .container .section-gypaete .gypaete-wrapper {
+  position: fixed;
+  top: 180px;
+  left: 0;
+  transform: translateX(-150%);
+}
+
+@keyframes floating {
+  0% {
+    transform: translate(0, 0px);
+  }
+  50% {
+    transform: translate(0, 100px);
+  }
+  80% {
+    transform: translate(0, 40px);
+  }
+  100% {
+    transform: translate(0, -0px);
+  }
+}
+
+
+
 
 .about .letter_bg {
   background-image: url("../img/letter질감2_컬러.png")

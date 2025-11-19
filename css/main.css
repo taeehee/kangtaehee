@@ -285,13 +285,30 @@ section {
 .main_section_02 .container .reveal {
   font-family: 'Kyobo Handwriting 2021 sjy';
   font-kerning: none;
-  text-transform: uppercase;
   font-size: var(--fontSize-40);
   line-height: 1.4;
   margin-top: 20rem;
 }
 
-/* reveal text 효과1 end */
+/* 강조할 텍스트 색상 */
+.main_section_02 .container .reveal .highlight {
+    position: relative; /* .highlight-bg의 absolute 기준점을 위해 추가 */
+    display: inline-block; /* span이 너비를 가질 수 있도록 설정 */
+}
+
+/* 강조 배경 스타일 */
+.main_section_02 .container .reveal .highlight-bg {
+    content:'';
+    width: 0%; /* 초기 너비를 0으로 설정하여 숨김 */
+    height: 90%;
+    background-color: rgb(246, 169, 203, 0.5); /* 투명도를 0.5로 높여 가독성 보조 */
+    display: block;
+    position: absolute;
+    left: 0; /* 왼쪽에서 시작 */
+    bottom: 0;
+    z-index: -1;
+    /* transition: width 0.5s ease; (GSAP가 처리하므로 CSS transition은 제거) */
+}
 
 
 /* 편지전달하는 새 */
@@ -300,7 +317,7 @@ section {
 }
 
 .main_section_02 .app .container .js-gypaete-section {
-    height: 150vh;
+  height: 150vh;
 }
 
 
@@ -323,12 +340,15 @@ section {
   0% {
     transform: translate(0, 0px);
   }
+
   50% {
     transform: translate(0, 100px);
   }
+
   80% {
     transform: translate(0, 40px);
   }
+
   100% {
     transform: translate(0, -0px);
   }

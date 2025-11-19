@@ -23,7 +23,7 @@ $(function () {
 
 
 
-  // text 애니메이션
+// text 애니메이션
   gsap.registerPlugin(ScrollTrigger);
   let revealAnimations = [];
 
@@ -64,9 +64,9 @@ $(function () {
   })
   //reveal text효과 end
 
+  
 
-  // 새 애니메이션
-
+    // 새 애니메이션
   gsap.to('.js-gypaete-wrapper', {
     left: '80%', /* 왼쪽에서 80%에 고정 */
     translateY: 0,
@@ -80,6 +80,8 @@ $(function () {
       markers: true
     },
   });
+
+
 
 
   gsap.registerPlugin(ScrollTrigger, MotionPathPlugin);

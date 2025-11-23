@@ -77,7 +77,7 @@ $(function () {
     scrollTrigger: {
       trigger: '.js-gypaete-section',
       scrub: 1,
-      markers: true
+      markers: false
     },
   });
 

@@ -8,7 +8,7 @@
   --fontSize-40: 4rem; /* Scroll to open, 손글씨 국문 */
   --fontSize-35: 3.5rem; /* project제목 */
   --fontSize-28: 2.8rem; /* 로고 */
-  --fontSize-25: 2.5rem; /* auout_l */
+  --fontSize-25: 2.5rem; /* about_l */
   --fontSize-20: 2rem; /* about_m, 반응형/적응형버튼, project본문*/
   --fontSize-18: 1.8rem; /* about_s, footer */
   --fontSize-16: 1.6rem; /* 네비, project버튼 */
@@ -22,7 +22,7 @@
 .about .letter_bg .inner,
 /* .project .inner, */
 .design .swiper.mySwiper{
-  max-width: 1520px;
+  max-width: 1320px;
   width: calc(100% - 56px);
   margin: 0 auto;
 }

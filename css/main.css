@@ -485,7 +485,7 @@ section {
 }
 
 .about .letter_bg .inner .right_wrap .skill .list {
-  width: 82%;
+  width: 84%;
   display: flex;
   flex-wrap: wrap;
   gap: 2.4rem 1.8rem;

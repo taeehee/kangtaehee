@@ -435,6 +435,10 @@ section {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
 }
 
+.about .letter_bg .inner .left_wrap .resume_btn img{
+  width: 2.8rem;
+}
+
 .about .letter_bg .inner .right_wrap {
   width: 59.92%;
   display: flex;
